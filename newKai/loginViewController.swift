@@ -49,6 +49,7 @@ class loginViewController: UIViewController {
         })
         
         print("我進來viewWillAppear了")
+        //跳轉至本畫面清空欄位
         accountTextfield.text = ""
         passwordTextfield.text = ""
     }
@@ -118,7 +119,7 @@ class loginViewController: UIViewController {
         Auth.auth().signIn(withEmail: accountAddress, password: password,completion: { (user,error) in
             print("登入了")
             if let err = error {
-                let alertController = UIAlertController(title: "登入錯誤", message: err.localizedDescription, preferredStyle: .alert)
+                let alertController = UIAlertController(title: "登入錯誤", message: "請確認輸入的帳號密碼正確", preferredStyle: .alert)
                 let okayAction = UIAlertAction(title: "ok", style: .cancel, handler: nil)
                 
                 alertController.addAction(okayAction)
@@ -126,6 +127,8 @@ class loginViewController: UIViewController {
                 sender.isEnabled = true
                 return
             }
+            
+            
             DispatchQueue.main.async {
                 sender.isEnabled = true
             }
@@ -139,10 +142,6 @@ class loginViewController: UIViewController {
                 controller.modalPresentationStyle = .currentContext
                 self.navigationController?.viewControllers = [controller]
             }
-//            let storyBoard = UIStoryboard(name: "Main", bundle: nil)
-//            let vc = storyBoard.instantiateViewController(withIdentifier: "personal")
-//            self.navigationController?.pushViewController(vc, animated: true)
-
 
         })
         

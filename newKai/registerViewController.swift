@@ -30,9 +30,11 @@ class registerViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setUIElement()
-        nicknameTextfield.text = "小華"
-        accountTextfield.text = "sam@gmail.com"
-        passwordTextfield.text = "123456"
+        
+        nicknameTextfield.text = ""
+        accountTextfield.text = ""
+        passwordTextfield.text = ""
+        
         
     }
     //點擊空白處，鍵盤彈回
@@ -67,11 +69,7 @@ class registerViewController: UIViewController {
         sendButton.setTitleColor(UIColor.white, for: UIControl.State.normal)
         sendButton.setTitleColor(UIColor.gray, for: UIControl.State.highlighted)
         sendButton.layer.cornerRadius = sendButton.bounds.height/2
-        
-        
-        
     }
-    
     
     @IBAction func unwindRegister(for unwindSegue: UIStoryboardSegue) {
         if unwindSegue.identifier == "unwindPhotoToRegister"{
@@ -102,12 +100,13 @@ class registerViewController: UIViewController {
             return
         }
         //帳密符合長度
-        guard accountAddress.split(separator: "@")[0].count > 3,
+        guard
+              accountAddress.split(separator: "@")[0].count > 3,
               accountAddress.split(separator: "@")[0].count < 21,
               password.count > 5,
-              password.count < 21
+              password.count < 13
         else {
-            let alertController1 = UIAlertController(title: "格式錯誤", message:"請確認您的帳號、密碼格式正確" , preferredStyle: .alert)
+            let alertController1 = UIAlertController(title: "格式錯誤", message:"請確認您的帳號不含郵件格式4-20個英數字元，密碼為6-12英數字元" , preferredStyle: .alert)
             let okayAction1 = UIAlertAction(title: "ok", style: .cancel, handler: nil)
             
             alertController1.addAction(okayAction1)
@@ -164,7 +163,6 @@ class registerViewController: UIViewController {
                         print("無法儲存顯示名稱:\(error.localizedDescription)")
                     }
                 })
-                
             }
             
             //利用Storage儲存圖片，第一個參數為儲存資料夾名稱，第二個資料夾為儲存圖片名字
@@ -183,11 +181,7 @@ class registerViewController: UIViewController {
                     }else{
                         print("上傳成功")
                     }
-                    
-                    
                 }
-                
-
             }
             //移除鍵盤
             self.view.endEditing(true)

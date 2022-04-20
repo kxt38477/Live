@@ -41,7 +41,7 @@
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dhf-xD-mPN" userLabel="accountText">
                                         <rect key="frame" x="66" y="0.0" width="264" height="66"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits" keyboardType="webSearch"/>
+                                        <textInputTraits key="textInputTraits" keyboardType="alphabet"/>
                                     </textField>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -70,7 +70,7 @@
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xrn-n7-CDf" userLabel="passwordText">
                                         <rect key="frame" x="66" y="0.0" width="264" height="66"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits" keyboardType="webSearch" secureTextEntry="YES"/>
+                                        <textInputTraits key="textInputTraits" keyboardType="alphabet" secureTextEntry="YES"/>
                                     </textField>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -130,7 +130,7 @@
             </objects>
             <point key="canvasLocation" x="792.75362318840587" y="731.91964285714278"/>
         </scene>
-        <!--Item-->
+        <!--首頁-->
         <scene sceneID="6BZ-Ft-Ivo">
             <objects>
                 <viewController storyboardIdentifier="home" id="rH7-q1-sIS" customClass="homeViewController" customModule="newKai" customModuleProvider="target" sceneMemberID="viewController">
@@ -304,7 +304,7 @@
                             <constraint firstItem="bJS-48-Zn5" firstAttribute="leading" secondItem="bk9-yZ-WWW" secondAttribute="leading" id="q6L-v5-IwY"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" image="tabHome" id="9mP-x3-j6t"/>
+                    <tabBarItem key="tabBarItem" title="首頁" image="tabHome" id="9mP-x3-j6t"/>
                     <navigationItem key="navigationItem" id="PvO-n8-D5Z"/>
                     <connections>
                         <outlet property="streamCollectionView" destination="bJS-48-Zn5" id="UVG-DN-8dR"/>
@@ -937,10 +937,10 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="0K6-oh-gXC" userLabel="passwordTextfield">
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="6-12個英數字元" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="0K6-oh-gXC" userLabel="passwordTextfield">
                                         <rect key="frame" x="60" y="0.0" width="240" height="60"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits" keyboardType="webSearch" secureTextEntry="YES"/>
+                                        <textInputTraits key="textInputTraits" keyboardType="alphabet" secureTextEntry="YES"/>
                                     </textField>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -977,10 +977,10 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="pEU-tM-iN3" userLabel="accountTextfield">
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="4-20個英數字元的電子郵件帳號" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="pEU-tM-iN3" userLabel="accountTextfield">
                                         <rect key="frame" x="60" y="0.0" width="240" height="60"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits" keyboardType="webSearch"/>
+                                        <textInputTraits key="textInputTraits" keyboardType="alphabet"/>
                                     </textField>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -1034,7 +1034,7 @@
             </objects>
             <point key="canvasLocation" x="1644.9275362318842" y="1462.5"/>
         </scene>
-        <!--Search View Controller-->
+        <!--搜尋-->
         <scene sceneID="vaO-LQ-GZk">
             <objects>
                 <viewController id="jdd-cY-RuD" customClass="searchViewController" customModule="newKai" customModuleProvider="target" sceneMemberID="viewController">
@@ -1044,7 +1044,7 @@
                         <subviews>
                             <searchBar contentMode="redraw" showsCancelButton="YES" translatesAutoresizingMaskIntoConstraints="NO" id="E1f-A9-dzX">
                                 <rect key="frame" x="0.0" y="88" width="414" height="51"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" keyboardType="webSearch"/>
                                 <connections>
                                     <outlet property="delegate" destination="jdd-cY-RuD" id="ISJ-Mz-OAg"/>
                                 </connections>
@@ -1213,7 +1213,7 @@
                             <constraint firstItem="vBn-Jq-j1o" firstAttribute="leading" secondItem="e3U-us-cP2" secondAttribute="leading" id="uMz-ua-KEC"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="R8k-aB-i1G"/>
+                    <navigationItem key="navigationItem" title="搜尋" id="R8k-aB-i1G"/>
                     <connections>
                         <outlet property="searchBar" destination="E1f-A9-dzX" id="CGN-DY-rzK"/>
                         <outlet property="searchCollectionView" destination="vBn-Jq-j1o" id="MsP-do-Zg6"/>
@@ -1245,11 +1245,11 @@
             </objects>
             <point key="canvasLocation" x="-1448" y="3"/>
         </scene>
-        <!--Item-->
+        <!--個人-->
         <scene sceneID="LBB-Y4-A2l">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="1z6-Ef-bRh" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" image="tabPersonal" id="a01-gC-fvh"/>
+                    <tabBarItem key="tabBarItem" title="個人" image="tabPersonal" id="a01-gC-fvh"/>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="Ej8-SM-cvq"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Od7-65-0Mn">
@@ -1265,11 +1265,11 @@
             </objects>
             <point key="canvasLocation" x="-443" y="732"/>
         </scene>
-        <!--Item-->
+        <!--搜尋-->
         <scene sceneID="uKl-Jw-VJk">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="v24-0h-JdY" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" image="tabSearch" id="X4W-RP-o8q"/>
+                    <tabBarItem key="tabBarItem" title="搜尋" image="tabSearch" id="X4W-RP-o8q"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="wYY-3H-4aH">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
