@@ -24,8 +24,6 @@ class homeViewController: UIViewController {
     //使用者頭貼及暱稱
     @IBOutlet weak var userNickname: UILabel!
     @IBOutlet weak var userPhoto: UIImageView!
-    //直播間元件名稱
-    
     
     
     override func viewDidLoad() {
@@ -35,9 +33,7 @@ class homeViewController: UIViewController {
         
         //解析後的資料放進自定義Json型別
         if myJsonCodable != nil {
-            
             appendStreamerDataArray(jsonCodable: myJsonCodable!)
-            
         }
         
         streamCollectionView.delegate = self
@@ -77,9 +73,7 @@ class homeViewController: UIViewController {
 
     
     //MARK: - 自訂函式
-    //改外觀
-    
-    
+
     //建立一個把Json字串解析為Json資料型別的function
     func getJsonData (JsonString:String) -> jsonCodable? {
         
@@ -165,6 +159,4 @@ extension homeViewController: UICollectionViewDelegate, UICollectionViewDataSour
         }
         
     }
-    
-    
 }

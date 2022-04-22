@@ -70,6 +70,8 @@ class VideoViewController: UIViewController {
 
         //讓影片在最下層(令按鈕浮現)
         self.view.layer.insertSublayer(playerLayer, at: 0)
+        
+    
 
     }
     
@@ -84,6 +86,7 @@ class VideoViewController: UIViewController {
                 user != nil,
                 user?.displayName != nil
             else {
+                self.key = "訪客"
                 DispatchQueue.main.async {
                     self.websocketConnect()
 
@@ -99,8 +102,17 @@ class VideoViewController: UIViewController {
             }
         })
         
+    }
+    //MARK: - 自定義函式
+    //聊天室淡出效果
+    func createGradientLayer() {
         
-        
+        let gradient = CAGradientLayer()
+        gradient.frame = ChatTableView.bounds
+        gradient.frame.size.height = ChatTableView.bounds.height
+        gradient.colors = [UIColor.black.cgColor, UIColor.black.cgColor, UIColor.black.cgColor, UIColor.clear.cgColor]
+        gradient.locations = [0, 0.3, 0.5, 1]
+        ChatTableView.layer.mask = gradient
     }
     
     
@@ -131,7 +143,7 @@ class VideoViewController: UIViewController {
         print("連上了")
         receive()
     }
-    //MARK: - 自定義函式
+    
     //跳出離開視窗
     @IBAction func alertAction(_ sender: Any) {
         alertView.isHidden = false
@@ -320,6 +332,11 @@ extension VideoViewController: URLSessionWebSocketDelegate {
 
 // MARK: ChatTableView
 extension VideoViewController: UITableViewDelegate, UITableViewDataSource {
+    
+    
+    
+    
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return  chatArray.count
 
@@ -334,6 +351,8 @@ extension VideoViewController: UITableViewDelegate, UITableViewDataSource {
         
         cell.userMessage.text = result
         
+        //漸層函式
+        createGradientLayer()
         //cell.contentView.transform = CGAffineTransform(scaleX: 1, y: -1)
         return cell
     }

@@ -102,8 +102,6 @@ extension searchViewController: UICollectionViewDelegate, UICollectionViewDataSo
                 return headerView
             }
         }
-        
-       
     }
     
     //Cell區間
@@ -150,10 +148,8 @@ extension searchViewController: UICollectionViewDelegate, UICollectionViewDataSo
             cell.streamTitle.text = hotStreamListArray[indexPath.row].stream_title
             cell.tags.text = "#" + hotStreamListArray[indexPath.row].tags
             cell.nickName.text = hotStreamListArray[indexPath.row].nickname
-            
         } else {
             if indexPath.section == 0 {
-                
                 //設定照片
                 if let imageUrl = URL(string: searchItem[indexPath.row].head_photo){
                     cell.headPhoto.sd_setImage(with: imageUrl, placeholderImage: UIImage(named: "paopao"))
@@ -187,12 +183,11 @@ extension searchViewController: UICollectionViewDelegate, UICollectionViewDataSo
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         if !searchText.isEmpty {
             searchItem.removeAll()
-
+            
             for i in hotStreamListArray {
                 if i.nickname.lowercased().contains(searchText.lowercased()) || i.stream_title.lowercased().contains(searchText.lowercased()) || i.tags.lowercased().contains(searchText.lowercased()) {
                     searchItem.append(i)
                 }
-
             }
         } else {
             searchItem.removeAll()

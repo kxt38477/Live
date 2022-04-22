@@ -53,6 +53,8 @@ class loginViewController: UIViewController {
         accountTextfield.text = ""
         passwordTextfield.text = ""
     }
+    //MARK: - 自定義函式
+ 
     //畫面消失移除監聽器
     override func viewDidDisappear(_ animated: Bool) {
         Auth.auth().removeStateDidChangeListener(handle!)
@@ -128,7 +130,6 @@ class loginViewController: UIViewController {
                 return
             }
             
-            
             DispatchQueue.main.async {
                 sender.isEnabled = true
             }
@@ -142,12 +143,8 @@ class loginViewController: UIViewController {
                 controller.modalPresentationStyle = .currentContext
                 self.navigationController?.viewControllers = [controller]
             }
-
         })
-        
-        
     }
-    
 }
 
 

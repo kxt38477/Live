@@ -67,7 +67,6 @@ class personalViewController: UIViewController {
     //登出程式碼
     @IBAction func logoutAction(_ sender: Any) {
         do {
-            //try為登出程式碼，若是報錯，執行catch裡的code
             try Auth.auth().signOut()
             if let controller = self.storyboard?.instantiateViewController(withIdentifier: "LogIn") as? loginViewController {
                 controller.modalPresentationStyle = .currentContext

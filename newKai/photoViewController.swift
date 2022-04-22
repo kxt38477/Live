@@ -79,10 +79,8 @@ extension photoViewController:UIImagePickerControllerDelegate & UINavigationCont
         myImage = image
         self.dismiss(animated: true)
         
-        
     }
-    
-    
+  
 }
 
 
